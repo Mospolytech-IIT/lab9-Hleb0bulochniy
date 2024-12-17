@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <main>
+        <section id="user-management">
+            <h2>Управление пользователями</h2>
+
+            <form id="user-form">
+                <input type="text" id="username" name="username" placeholder="Имя пользователя" required>
+                <input type="email" id="email" name="email" placeholder="Электронная почта" required>
+                <input type="text" id="password" name="password" placeholder="Пароль" required>
+                <button type="button" id="create-user">Создать пользователя</button>
+            </form>
+
+            <div class="actions">
+                <button type="button" id="fetch-users">Получить всех пользователей</button>
+            </div>
+
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя пользователя</th>
+                        <th>Электронная почта</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Строки дляя пользователей -->
+                </tbody>
+            </table>
+        </section>
+
+        <div id="update-user-form" style="display: none;">
+            <h3>Обновить пользователя</h3>
+            <form id="update-user">
+                <input type="hidden" id="update-user-id">
+                <input type="text" id="update-username" name="username" placeholder="Имя пользователя" required>
+                <input type="email" id="update-email" name="email" placeholder="Электронная почта" required>
+                <input type="text" id="update-password" name="password" placeholder="Пароль" required>
+                <button type="button" id="save-update-user">Сохранить изменения</button>
+            </form>
+        </div>
+
+        <section id="post-management">
+            <h2>Управление постами</h2>
+
+            <form id="post-form">
+                <input type="text" id="post-title" name="title" placeholder="Заголовок" required>
+                <textarea id="post-content" name="content" placeholder="Содержание" required></textarea>
+                <input type="number" id="post-user-id" name="user_id" placeholder="ID пользователя" required>
+                <button type="button" id="create-post">Создать пост</button>
+            </form>
+
+            <div class="actions">
+                <button type="button" id="fetch-posts">Получить все посты</button>
+            </div>
+
+            <table id="post-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Заголовок</th>
+                        <th>Содержание</th>
+                        <th>ID пользователя</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Строки для постов -->
+                </tbody>
+            </table>
+
+            <div id="update-post-form" style="display: none;">
+                <h3>Обновить пост</h3>
+                <form id="update-post">
+                    <input type="hidden" id="update-post-id">
+                    <input type="text" id="update-post-title" name="title" placeholder="Заголовок" required>
+                    <textarea id="update-post-content" name="content" placeholder="Содержание" required></textarea>
+                    <input type="number" id="update-post-user-id" name="user_id" placeholder="ID пользователя" required>
+                    <button type="button" id="save-update-post">Сохранить изменения</button>
+                </form>
+            </div>
+
+            <div id="user-posts-view" class="hidden">
+                <h3>Посты выбранного пользователя</h3>
+                <table id="user-posts-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Заголовок</th>
+                            <th>Содержание</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Посты для выбр. юзера -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
